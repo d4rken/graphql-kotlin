@@ -4,6 +4,7 @@ import com.expedia.graphql.annotations.GraphQLDescription
 import com.expedia.graphql.annotations.GraphQLIgnore
 import com.expedia.graphql.sample.directives.CustomDirective
 import org.springframework.stereotype.Component
+import java.net.URL
 import java.util.Random
 
 /**
@@ -52,4 +53,6 @@ class SimpleQuery: Query {
             @GraphQLDescription("this field is required") requiredValue: Int,
             @GraphQLDescription("this field is optional") optionalValue: Int? = null)
             = "required value=$requiredValue, optional value=$optionalValue"
+
+    fun someUrlScalar() = URL("https://github.com")
 }
